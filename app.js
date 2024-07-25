@@ -55,3 +55,21 @@ const newRadius = Math.sqrt(additionalSpace / PI);
 
 console.log(`Additional space required: ${additionalSpace.toFixed(2)} square meters`);
 console.log(`New radius of the garden: ${newRadius.toFixed(2)} meters`);
+
+// Part 3: Errors in Judgement
+
+const initialPlantsPart3 = 100;
+const weeksPart3 = 10;
+
+try {
+    const plantsPart3 = calculatePlantGrowth(weeksPart3);
+    const requiredSpacePart3 = plantsPart3 * minSpacePerPlant;
+
+    if (requiredSpacePart3 > area) {
+        throw new Error("The required space exceeds the available space in the garden.");
+    }
+
+    console.log(`The required space is ${requiredSpacePart3.toFixed(2)} square meters, which is within the garden's capacity.`);
+} catch (error) {
+    console.error(error.message);
+}

@@ -35,3 +35,23 @@ const weeks3 = 3;
 console.log(`Week ${weeks1}: ${getRecommendation(weeks1)}`);
 console.log(`Week ${weeks2}: ${getRecommendation(weeks2)}`);
 console.log(`Week ${weeks3}: ${getRecommendation(weeks3)}`);
+
+// Part 2: Thinking Bigger
+
+const initialPlantsPart2 = 100;
+const weeksPart2 = 10;
+
+function calculateAdditionalSpace(initialPlants, weeks) {
+    let plants = initialPlants;
+    for (let i = 0; i < weeks; i++) {
+        plants *= 2;
+    }
+    const requiredSpace = plants * minSpacePerPlant;
+    return requiredSpace;
+}
+
+const additionalSpace = calculateAdditionalSpace(initialPlantsPart2, weeksPart2);
+const newRadius = Math.sqrt(additionalSpace / PI);
+
+console.log(`Additional space required: ${additionalSpace.toFixed(2)} square meters`);
+console.log(`New radius of the garden: ${newRadius.toFixed(2)} meters`);
